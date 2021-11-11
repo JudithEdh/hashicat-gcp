@@ -3,7 +3,7 @@ module "vpc" {
     version = "~> 3.0"
 
     project_id   = "var.project"
-    network_name = "example-vpc"
+    network_name = "gaurav-network"
     routing_mode = "GLOBAL"
 
     subnets = [
@@ -15,14 +15,13 @@ module "vpc" {
 ]
 
     secondary_ranges = {
-        subnet-01 = [
+        gaurav-subnet = [
             {
                 range_name    = "subnet-01-secondary-01"
                 ip_cidr_range = "192.168.64.0/24"
             },
         ]
 
-        subnet-02 = []
     }
 
     routes = [
